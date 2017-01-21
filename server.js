@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var PORT = process.env.port || 3000;
+var PORT = process.env.PORT || 3000;
 //requires user to be logged in, route-level middleware
 //runs for the one route you specify
 var middleware = require('./middleware.js');
