@@ -3,16 +3,7 @@ var app = express();
 const PORT = 3000;
 //requires user to be logged in, route-level middleware
 //runs for the one route you specify
-var middleware = {
-    requireAuthentication: function(req, res, next){
-        console.log('private route hit!');
-        next();
-    },
-    logger: function(req, res, next){
-        console.log('Request: ' + new Date().toString() + ' ' + req.method + ' ' + req.originalUrl);
-        next();
-    }
-}
+var middleware = require('./middleware.js');
 //app.use(middleware.requireAuthentication);
 //individual routes
 app.use(middleware.logger);
